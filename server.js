@@ -5,6 +5,10 @@ const app = express();
 
 app.get('/', (req,res) => {
   res.send("THIS IS WORKING!!!!");
+});
+
+app.post('/signin', (req,res) => {
+  res.send("signin");
 })
 
 app.listen(3000, () => {
