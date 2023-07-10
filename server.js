@@ -28,7 +28,7 @@ const database = {
 
 
 app.get('/', (req,res) => {
-  res.send("THIS IS WORKING!!!!");
+  res.send(database.users);
 });
 
 
