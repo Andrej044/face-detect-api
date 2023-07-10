@@ -1,5 +1,27 @@
 const express = require("express");
 
+const database = {
+  users:[
+    {
+      id:"1",
+      name: "Andrii",
+      email: "andrii@gmail.com",
+      password: "cookies",
+      entries:0,
+      joined: new Date(),
+    },
+    {
+      id:"2",
+      name: "Natalii",
+      email: "nataii@gmail.com",
+      password: "bananas",
+      entries:0,
+      joined: new Date(),
+    },
+  ]
+} 
+
+
 const app = express();
 
 
