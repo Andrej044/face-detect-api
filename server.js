@@ -13,6 +13,7 @@ const database = {
       id:"1",
       name: "Andrii",
       email: "andrii@gmail.com",
+      password: "cookies",
       entries:0,
       joined: new Date(),
     },
@@ -44,7 +45,7 @@ app.get('/', (req,res) => {
 app.post('/signin', (req,res) => {
   if(req.body.email === database.users[0].email && 
     req.body.password === database.users[0].password){
-      res.json("request succes");
+      res.json(database.users[0]);
     } else {
       res.status(400).json("error logging in");
     }
@@ -61,7 +62,6 @@ app.post("/register", (req,res) => {
       id:"3",
       name: name,
       email: email,
-      password: password,
       entries:0,
       joined: new Date().toLocaleDateString(),
   })
@@ -98,6 +98,6 @@ app.put("/image", (req, res) =>{
   }
 })
 
-app.listen(3001, () => {
-  console.log("app is running  on port 3001");
+app.listen(5501, () => {
+  console.log("app is running  on port 5501");
 })
