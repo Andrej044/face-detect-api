@@ -1,6 +1,18 @@
 const express = require("express");
 const bcrypt = require("bcrypt-nodejs");
 const cors = require("cors");
+const knex = require("knex");
+
+
+knex({
+  client: 'mysql',
+  connection: {
+    host : '127.0.0.1',
+    user : 'postgres',
+    password : 'zirochka32*',
+    database : 'smart-brain'
+  }
+});
 
 const app = express();
 
