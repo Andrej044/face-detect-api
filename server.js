@@ -106,16 +106,14 @@ app.get("/profile/:id", (req, res) =>{
 
 app.put("/image", (req, res) =>{
   const { id } = req.body;
-
-  database.users.forEach( user => {
-    if(user.id === id){
-      user.entries++;
-     return res.json(user.entries);
-    } 
+  db('users').where('id', '=', id)
+  .increment('entries', 1)
+  .returning('entries')
+  .then(entries => {
+    res.json(entries[0].entries)
   })
-  if(!found){
-      res.status(404).json("no such user");
-  }
+  .catch(err => res.status(400).json("Unable to get entries")) 
+
 })
 
 app.listen(5501, () => {
