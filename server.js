@@ -22,38 +22,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const database = {
-  users:[
-    {
-      id:"1",
-      name: "Andrii",
-      email: "andrii@gmail.com",
-      password: "cookies",
-      entries:0,
-      joined: new Date(),
-    },
-    {
-      id:"2",
-      name: "Natalii",
-      email: "nataii@gmail.com",
-      entries:0,
-      joined: new Date(),
-    },
-  ],
-  login:[
-    {
-      id:"",
-      hash:"",
-      email:""
-    }
-  ]
-} 
-
-
-
 
 app.get('/', (req,res) => {
-  res.send(database.users);
+  res.send("succes");
 });
 
 
