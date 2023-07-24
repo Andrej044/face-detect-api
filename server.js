@@ -4,8 +4,8 @@ const cors = require("cors");
 const knex = require("knex");
 
 const register = require("./controllers/register"); 
-
 const signin = require("./controllers/signin");
+const profile = require("./controllers/profile");
 
 
 const db = knex({
@@ -40,21 +40,8 @@ app.post("/register", (req,res)=>{
   register.registerHandler(req, res, db, bcrypt);
 })
 
-app.get("/profile/:id", (req, res) =>{
-  const { id } = req.params;
-
-  db.select('*').from('users').where({
-    id:id
-  })
-    .then(user => {
-      if(user.length){
-        res.json(user[0])
-      } else {
-        res.status(400).json('User not found')
-      }
-  })
-    .catch(err => res.status(400).json('Ups, not found that user'))
-
+app.get("/profile/:id", (req, res)=>{
+  profile.profileHandler(req,res, db);
 })
 
 
