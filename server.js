@@ -8,7 +8,6 @@ const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
-
 const db = knex({
   client: 'pg',
   connection: {
@@ -20,18 +19,14 @@ const db = knex({
   }
 });
 
-
-
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-
 app.get('/', (req,res) => {
   res.send("succes");
 });
-
 
 app.post('/signin', (req, res)=>{
   signin.signinHandler(req, res, db, bcrypt)
@@ -44,7 +39,6 @@ app.post("/register", (req,res)=>{
 app.get("/profile/:id", (req, res)=>{
   profile.profileHandler(req,res, db);
 })
-
 
 app.put("/image", (req, res)=>{
   image.imageHandler(req,res,db);
