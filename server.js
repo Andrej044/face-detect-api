@@ -28,21 +28,15 @@ app.get('/', (req,res) => {
   res.send("succes");
 });
 
-app.post('/signin', (req, res)=>{
-  signin.signinHandler(req, res, db, bcrypt)
-})
+app.post('/signin', (req, res)=>{signin.signinHandler(req, res, db, bcrypt)})
 
-app.post("/register", (req,res)=>{
-  register.registerHandler(req, res, db, bcrypt);
-})
+app.post("/register", (req,res)=>{register.registerHandler(req, res, db, bcrypt);})
 
-app.get("/profile/:id", (req, res)=>{
-  profile.profileHandler(req,res, db);
-})
+app.get("/profile/:id", (req, res)=>{profile.profileHandler(req,res, db);})
 
-app.put("/image", (req, res)=>{
-  image.imageHandler(req,res,db);
-})
+app.put("/image", (req, res)=>{image.imageHandler(req,res,db);})
+
+app.post('/imageurl', (req, res) => {image.apiCallHandler(req,res)})
 
 app.listen(5501, () => {
   console.log("app is running  on port 5501");
