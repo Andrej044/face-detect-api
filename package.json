@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "set PORT=5501 && nodemon server.js"
+    "start": "set PORT=5501 && node server.js"
   },
   "keywords": [],
   "author": "",
