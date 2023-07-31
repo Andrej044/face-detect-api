@@ -38,6 +38,6 @@ app.put("/image", (req, res)=>{image.imageHandler(req,res,db);})
 
 app.post('/imageurl', (req, res) => {image.apiCallHandler(req,res)})
 
-app.listen(5501, () => {
-  console.log("app is running  on port 5501");
+app.listen(3001, () => {
+  console.log("app is running  on port 3001");
 })
