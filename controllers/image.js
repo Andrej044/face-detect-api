@@ -1,4 +1,4 @@
-const { default: fetch } = require("node-fetch");
+ import {fetch} from "node-fetch";
 
 const returnClarifaiRequestOptions = (url) => {
   const PAT = process.env.API_CLARIFAI;
