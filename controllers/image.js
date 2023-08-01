@@ -34,6 +34,7 @@ const returnClarifaiRequestOptions = (url) => {
 }
 
 const apiCallHandler = (req, res) => {
+  console.log(req.body.input)
   fetch("https://api.clarifai.com/v2/models/face-detection/outputs", returnClarifaiRequestOptions(req.body.input))
     .then(response => response.json())
     .then(data => data.outputs[0].data.regions)
