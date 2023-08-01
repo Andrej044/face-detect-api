@@ -1,5 +1,5 @@
 const returnClarifaiRequestOptions = (url) => {
-  const PAT = '1b43454f514e47ed9fc75b63f48df8a7';
+  const PAT = process.env.API_CLARIFAI;
   const USER_ID = 'andrej044';       
   const APP_ID = 'smart-brain';
   // const MODEL_ID = 'face-detection';
