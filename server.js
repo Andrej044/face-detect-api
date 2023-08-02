@@ -5,9 +5,9 @@ import knex  from "knex";
 import fetch from "node-fetch";
 
 
-import register from "./controllers/register.js"; 
-import signin from "./controllers/signin.js";
-import profile from "./controllers/profile.js";
+import registerHandler from "./controllers/register.js"; 
+import signinHandler from "./controllers/signin.js";
+import profileHandler from "./controllers/profile.js";
 import image from "./controllers/image.js";
 
 const db = knex({
@@ -32,11 +32,11 @@ app.get('/', (req,res) => {
   res.send("succes");
 });
 
-app.post('/signin', (req, res)=>{signin.signinHandler(req, res, db, bcrypt)})
+app.post('/signin', (req, res)=>{signinHandler(req, res, db, bcrypt)})
 
-app.post("/register", (req,res)=>{register.registerHandler(req, res, db, bcrypt);})
+app.post("/register", (req,res)=>{registerHandler(req, res, db, bcrypt);})
 
-app.get("/profile/:id", (req, res)=>{profile.profileHandler(req,res, db);})
+app.get("/profile/:id", (req, res)=>{profileHandler(req,res, db);})
 
 app.put("/image", (req, res)=>{image.imageHandler(req,res,db);})
 
