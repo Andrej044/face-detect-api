@@ -15,6 +15,4 @@ const profileHandler = (req, res, db) =>{
 
 }
 
-module.exports={
-  profileHandler:profileHandler
-}
+export default profileHandler

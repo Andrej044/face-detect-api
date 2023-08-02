@@ -56,7 +56,4 @@ const imageHandler = (req, res, db) =>{
 
 }
 
-module.exports= {
-  imageHandler: imageHandler,
-  apiCallHandler:apiCallHandler
-}
+export default {imageHandler,apiCallHandler}

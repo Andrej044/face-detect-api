@@ -31,6 +31,4 @@ const registerHandler = (req,res, db, bcrypt) => {
       .catch(err => res.status(400).json("Can't register that user"))
   }
 
-  module.exports = {
-    registerHandler: registerHandler
-  }
+  export default registerHandler;

@@ -17,6 +17,4 @@ const signinHandler = (req,res, db, bcrypt) => {
     .catch(err => res.status(400).json("Incorrect login or password"))
 }
 
-module.exports = {
-  signinHandler: signinHandler
-}
+export default signinHandler
